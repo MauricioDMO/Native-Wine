@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "vercel deploy --prebuilt"
+    "deploy": "npx vercel deploy --prebuilt && npx vercel --prod"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
