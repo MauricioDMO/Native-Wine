@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "vercel deploy --prebuilt"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
@@ -23,3 +24,4 @@
     "typescript": "^5.2.2"
   }
 }
+
