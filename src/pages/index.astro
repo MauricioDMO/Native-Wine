@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import logo from "../assets/logo-completo.webp";
+---
+
+<Layout
+  title="Inicio"
+  description="Sitio web de Native Wine, vino artesanal salvadoreño. Un proyecto universitario de emprendimiento"
+>
+  <section class="grid place-items-center py-32 px-10 h-fit" id="title">
+    <div
+      class="ml-auto backdrop-blur flex items-center flex-wrap max-w-[500px] p-5 gap-3 justify-center rounded-xl min-h-[168px]"
+    >
+      <img
+        src={logo.src}
+        alt="Logo de Native Wine"
+        class="object-scale-down inline-block max-h-32 invert"
+      />
+      <h1
+        class="text-3xl leading-3 font-black inline-block text-secondary-1-1 text-center"
+      >
+        Native Wine<br />
+        <span class="text-xl font-normal text-gray-100"
+          >Siente el espíritu Latinoamericano</span
+        >
+      </h1>
+    </div>
+  </section>
+  <section class="relative">
+    <div class="bg -z-10"></div>
+    <div class="py-10 px-5">
+      <h2 class="text-5xl [text-wrap:balance] font-native-land text-center">
+        ¿Te gustaría probar un vino artesanal hecho de frutas tropicales que te
+        recuerden a Latinoamérica?
+      </h2>
+      <p class="my-6 max-w-[80ch] m-auto">
+        <strong class="text-secondary-1-0"
+          >¿Te imaginas disfrutar de un vino que te transporta a las antiguas
+          civilizaciones prehispánicas?</strong
+        > Eso es lo que te ofrece Native Wine, un vino de piña y manzana que
+        rescata el legado de nuestros ancestros con técnicas modernas y
+        tradicionales.
+      </p>
+      <p class="my-6 max-w-[80ch] m-auto">
+        Native Wine es más que un vino, es una aventura sensorial que te
+        sorprende con su calidad, autenticidad y personalidad. Cada botella es
+        fruto de un proceso artesanal que cuida cada detalle: desde la selección
+        de las frutas hasta el añejamiento personalizado.
+      </p>
+      <p class="my-6 max-w-[80ch] m-auto">
+        Native Wine es también una forma de conocer y valorar las raíces
+        prehispánicas, a través de una imagen de marca que se inspira en el arte
+        y la simbología de los pueblos originarios de América.
+      </p>
+      <p class="my-6 max-w-[80ch] m-auto">
+        Native Wine es una invitación a conectar con la tierra, la tradición y
+        la artesanía, degustando un vino que expresa la pasión, el cuidado y la
+        dedicación que ponemos en cada elaboración.
+      </p>
+      <p class="my-6 max-w-[80ch] m-auto">
+        Native Wine te acerca a nosotros con una atención personalizada, una
+        comunicación constante y una propuesta de experiencias únicas y
+        exclusivas.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .bg {
+    background-image: url("../assets/patron-rectangulo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: opacity(0.05);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  section#title {
+    background-image: url("../assets/vinedo-hd.webp");
+    background-size: cover;
+    background-position: left;
+  }
+</style>

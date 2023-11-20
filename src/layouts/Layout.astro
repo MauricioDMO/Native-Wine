@@ -1,0 +1,55 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const { title, description } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logo-without-bg.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{"Native Wine | " + title}</title>
+    <style is:global>
+      :root {
+        scroll-behavior: smooth;
+      }
+      html {
+        font-family: system-ui, sans-serif;
+        background: #f1f1f1;
+
+        --primary-0: #e3ae2e; /* Main Primary color Yellow*/
+        --primary-1: #f6c756;
+        --secondary-1-0: #2db825; /* Main Secondary color (1) Green*/
+        --secondary-1-1: #4cc746;
+        --secondary-2-0: #e12e32; /* Main Secondary color (2) Red*/
+        --secondary-2-1: #f45559;
+        --complement-0: #2f429b; /* Main Complement color Blue*/
+        --complement-1: #4859a8;
+      }
+      @font-face {
+        font-family: "Native Land";
+        src: url("/fonts/Native-Land.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        min-height: calc(100vh + 1px);
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="relative">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

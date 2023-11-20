@@ -1,0 +1,62 @@
+---
+import Title from "../components/Title.astro";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+const fotos = await Astro.glob("../assets/galeria/*.jpeg");
+---
+
+<Layout
+  title="Galeria"
+  description="Galeria de fotos de la preparacion del vino Inca Intenso"
+>
+  <Title>Galeria</Title>
+  <div class="flex p-10 max-w-4xl m-auto">
+    <section>
+      <ul>
+        {
+          fotos.map((foto) => (
+            <li class="bg-gray-300 rounded-xl overflow-hidden">
+              <Image
+                src={foto.default}
+                alt="Foto de la preparacion del vino Inca Intenso"
+                class="aspect-square object-cover transition hover:scale-110"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  ul {
+    max-width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+  li {
+    filter: grayscale(1);
+    animation: appears linear both;
+    animation-timeline: view();
+    animation-range: 10% 20%;
+  }
+
+  @keyframes appears {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  li:hover {
+    filter: grayscale(0) contrast(1.1);
+  }
+</style>

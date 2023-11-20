@@ -1,0 +1,36 @@
+---
+import Mail from "./Mail.astro";
+import WhatsApp from "./WhatsApp.astro";
+import fondo from "../assets/patron-circulo.png";
+---
+
+<footer class="relative overflow-hidden">
+  <div class="p-14 bg-white z-20">
+    <p class="text-center z-20">
+      © 2023 Native Wine - Todos los derechos reservados
+    </p>
+    <div class="flex gap-3 justify-center z-20">
+      <a class="z-20" href="whatsapp://send?text=Hola Buenas&phone=+50374433939"
+        ><WhatsApp /></a
+      >
+      <a
+        class="z-20"
+        href="mailto:nativewine.contacto@gmail.com?Subject=Contacto desde la web"
+      >
+        <Mail />
+      </a>
+    </div>
+  </div>
+  <img src={fondo.src} alt="patron en forma de circulo" />
+</footer>
+
+<style>
+  img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 175%;
+    transform: translate(50%, 50%);
+    opacity: 0.5;
+  }
+</style>
