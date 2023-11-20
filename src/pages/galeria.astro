@@ -7,10 +7,10 @@ const fotos = await Astro.glob("../assets/galeria/*.jpeg");
 ---
 
 <Layout
-  title="Galeria"
-  description="Galeria de fotos de la preparacion del vino Inca Intenso"
+  title="Galería"
+  description="Galería de fotos de la preparación del vino Inca Intenso"
 >
-  <Title>Galeria</Title>
+  <Title>Galería</Title>
   <div class="flex p-10 max-w-4xl m-auto">
     <section>
       <ul>
@@ -19,7 +19,7 @@ const fotos = await Astro.glob("../assets/galeria/*.jpeg");
             <li class="bg-gray-300 rounded-xl overflow-hidden">
               <Image
                 src={foto.default}
-                alt="Foto de la preparacion del vino Inca Intenso"
+                alt="Foto de la preparación del vino Inca Intenso"
                 class="aspect-square object-cover transition hover:scale-110"
               />
             </li>
