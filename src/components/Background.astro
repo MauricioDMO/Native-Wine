@@ -1,0 +1,20 @@
+---
+const { src, opacity = 0.05 } = Astro.props;
+---
+
+<div class="bg" style=`--bg: url("${src}"); --op: opacity(${opacity})`></div>
+
+<style>
+  .bg {
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: var(--op);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+</style>

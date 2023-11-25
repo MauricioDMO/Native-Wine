@@ -1,7 +1,6 @@
 ---
 import Mail from "./Mail.astro";
 import WhatsApp from "./WhatsApp.astro";
-import fondo from "../assets/patron-circulo.png";
 ---
 
 <footer class="relative overflow-hidden">
@@ -21,7 +20,7 @@ import fondo from "../assets/patron-circulo.png";
       </a>
     </div>
   </div>
-  <img src={fondo.src} alt="patron en forma de circulo" />
+  <img src="/patron-circulo.svg" alt="patron en forma de circulo" />
 </footer>
 
 <style>
@@ -32,5 +31,6 @@ import fondo from "../assets/patron-circulo.png";
     height: 175%;
     transform: translate(50%, 50%);
     opacity: 0.5;
+    pointer-events: none;
   }
 </style>

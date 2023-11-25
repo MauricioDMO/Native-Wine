@@ -10,13 +10,15 @@ const fotos = await Astro.glob("../assets/galeria/*.jpeg");
   title="Galería"
   description="Galería de fotos de la preparación del vino Inca Intenso"
 >
+  <div class="p-5"></div>
   <Title>Galería</Title>
   <div class="flex p-10 max-w-4xl m-auto">
     <section>
       <ul>
         {
           fotos.map((foto) => (
-            <li class="bg-gray-300 rounded-xl overflow-hidden">
+            <li class="bg-gray-300 rounded-xl overflow-hidden relative">
+              <div class="pointer" />
               <Image
                 src={foto.default}
                 alt="Foto de la preparación del vino Inca Intenso"
@@ -39,10 +41,13 @@ const fotos = await Astro.glob("../assets/galeria/*.jpeg");
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
   li {
-    filter: grayscale(1);
     animation: appears linear both;
     animation-timeline: view();
     animation-range: 10% 20%;
+  }
+
+  img {
+    filter: grayscale(1);
   }
 
   @keyframes appears {
@@ -56,7 +61,23 @@ const fotos = await Astro.glob("../assets/galeria/*.jpeg");
     }
   }
 
-  li:hover {
+  li:hover img {
     filter: grayscale(0) contrast(1.1);
+  }
+  li:hover .pointer {
+    opacity: 0;
+  }
+
+  .pointer {
+    position: absolute;
+    bottom: 4%;
+    right: 4%;
+    width: 30%;
+    height: 30%;
+    pointer-events: none;
+    background-image: url("../assets/pointer.png");
+    background-size: cover;
+    z-index: 30;
+    transition: opacity 0.1s ease-in-out;
   }
 </style>

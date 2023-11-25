@@ -20,4 +20,5 @@ Todos los comandos necesarios para trabajar con este proyecto.
 | `npm run dev`     | Iniciar el sevidor local de desarrollo `localhost:4321`      |
 | `npm run build`   | Construir el sitio para produccion en `./dist/`              |
 | `npm run preview` | Iniciar el servidor lucar para previsualizar la construccion |
+| `npm run deploy`  | Publicar la pagina web                                       |
 

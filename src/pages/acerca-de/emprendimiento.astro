@@ -1,17 +1,19 @@
 ---
-import Title from "../components/Title.astro";
-import Layout from "../layouts/Layout.astro";
+import Back from "../../components/Back.astro";
+import Background from "../../components/Background.astro";
+import Title from "../../components/Title.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout
   title="Sobre El Emprendimiento"
   description="Un grupo de estudiantes universitarios presenta un proyecto de emprendimiento que consiste en producir un vino artesanal hecho con frutas tropicales"
 >
-  <div class="bg -z-10"></div>
+  <Background src="/patron-cuadrado.svg" />
   <Title>Sobre El Emprendimiento</Title>
-  <section>
-    <article class="max-w-[80ch] m-auto my-8">
-      <p>
+  <section class="p-4">
+    <article class="max-w-[80ch] m-auto my-4">
+      <p class="text-justify">
         Un grupo de estudiantes universitarios presenta un proyecto de
         emprendimiento que consiste en producir y comercializar un vino
         artesanal hecho con frutas tropicales como la piña y la manzana, con una
@@ -23,13 +25,13 @@ import Layout from "../layouts/Layout.astro";
         Fundamentos Ideológicos
       </h2>
       <h3 class="text-center font-native-land text-4xl m-4">Visión</h3>
-      <p>
+      <p class="text-justify">
         Ser una marca reconocida y admirada por la excelencia y la autenticidad
         de sus vinos artesanales, que reflejen la cultura e historia de los
         pueblos originarios de América.
       </p>
       <h3 class="text-center font-native-land text-4xl m-4">Misión</h3>
-      <p>
+      <p class="text-justify">
         Ofrecer experiencias excepcionales y únicas a través de vinos de alta
         calidad, elaborados con técnicas artesanales e innovadoras, que
         transmitan la pasión, el cuidado y la tradición de la vinificación.
@@ -43,17 +45,5 @@ import Layout from "../layouts/Layout.astro";
       </ul>
     </article>
   </section>
+  <Back href="/acerca-de" />
 </Layout>
-
-<style>
-  .bg {
-    background-image: url("../assets/patron-cuadrado.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: opacity(0.05);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-</style>

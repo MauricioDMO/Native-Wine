@@ -1,65 +1,49 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import MenuIcon from "./MenuIcon.astro";
 ---
 
 <header class="shadow-sm flex flex-col">
   <div class="flex justify-between w-full items-center">
-    <h2>
+    <h2 class="h-full">
       <a href="/">
-        <img src="/logo-text.svg" alt="Logo de Native Wine" />
+        <img
+          src="/logo-text.svg"
+          alt="Logo de Native Wine"
+          class="aspect-[300/37] h-full"
+        />
       </a>
     </h2>
-    <label for="menu">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="icon icon-tabler icon-tabler-glass cursor-pointer cup"
-        width="44"
-        height="44"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="#2c3e50"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M8 21l8 0"></path>
-        <path d="M12 15l0 6"></path>
-        <path d="M17 3l1 7c0 3.012 -2.686 5 -6 5s-6 -1.988 -6 -5l1 -7h10z"
-        ></path>
-      </svg>
+    <label
+      for="menu"
+      class="cursor-pointer transition hover:scale-110 hover:font"
+    >
+      <MenuIcon />
     </label>
   </div>
-  <input type="checkbox" id="menu" />
+  <input type="checkbox" id="menu" class="hidden" />
   <nav class="my-4">
     <ul class="flex flex-col gap-4 sm:flex-row">
-      <li class="bg-white rounded-lg p-1 px-2">
+      <li class="bg-white grid rounded-lg">
         <HeaderLink href="/">Inicio</HeaderLink>
       </li>
-      <li class="bg-white rounded-lg p-1 px-2">
+      <li class="bg-white grid rounded-lg">
         <HeaderLink href="/galeria">Galeria</HeaderLink>
       </li>
-      <li class="bg-white rounded-lg p-1 px-2">
+      <li class="bg-white grid rounded-lg">
         <HeaderLink href="/proyecto">Proyecto</HeaderLink>
       </li>
-      <li class="bg-white rounded-lg p-1 px-2">
+      <li class="bg-white grid rounded-lg">
         <HeaderLink href="/contacto">Contacto</HeaderLink>
       </li>
-      <li class="bg-white rounded-lg p-1 px-2">
-        <HeaderLink href="/sobre-nosotros">Sobre Nosotros</HeaderLink>
-      </li>
-      <li class="bg-white rounded-lg p-1 px-2">
-        <HeaderLink href="/emprendimiento">Sobre el Emprendimiento</HeaderLink>
+      <li class="bg-white grid rounded-lg">
+        <HeaderLink href="/acerca-de">Acerca de</HeaderLink>
       </li>
     </ul>
   </nav>
 </header>
 
 <style>
-  #menu {
-    display: none;
-  }
-
   nav {
     display: none;
   }
@@ -86,24 +70,8 @@ import HeaderLink from "./HeaderLink.astro";
   h2 {
     height: min-content;
     flex-grow: 1;
-    min-width: 100px;
+    min-width: 200px;
     max-width: 316px;
-  }
-
-  .cup {
-    animation: tambaleo 3s ease-in-out alternate infinite;
-  }
-
-  @keyframes tambaleo {
-    0% {
-      transform: rotate(5deg);
-    }
-    50% {
-      transform: rotate(-5deg);
-    }
-    100% {
-      transform: rotate(5deg);
-    }
   }
 
   @keyframes change-color {
@@ -114,6 +82,22 @@ import HeaderLink from "./HeaderLink.astro";
     100% {
       background-color: #fffb;
       backdrop-filter: blur(10px);
+    }
+  }
+
+  @media (min-width: 750px) {
+    header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    header > div {
+      width: auto;
+    }
+    header label {
+      display: none;
+    }
+    nav {
+      display: flex;
     }
   }
 </style>

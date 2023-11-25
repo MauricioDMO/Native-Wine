@@ -1,0 +1,51 @@
+---
+import Background from "../../components/Background.astro";
+import Title from "../../components/Title.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Acerca de"
+  description="Native Wine es una empresa joven y dinámica se muestran dos artículos: Emprendimiento y Nosotros."
+>
+  <div class="grid place-items-center h-full">
+    <section class="max-w-[80ch] m-auto my-4">
+      <Title>Acerca de</Title>
+      <div class="flex flex-col gap-4 mt-4">
+        <article
+          class="bg-white rounded-lg shadow grid hover:scale-105 transition-transform mx-5 z-30"
+        >
+          <a class="p-6" href="acerca-de/emprendimiento">
+            <h2
+              class="font-native-land text-3xl mb-2 text-secondary-2-0 underline underline-offset-4"
+            >
+              Emprendimiento
+            </h2>
+            <p class="text-justify">
+              Un grupo de estudiantes universitarios presenta un proyecto de
+              emprendimiento que consiste en producir un vino artesanal hecho
+              con frutas tropicales
+            </p>
+          </a>
+        </article>
+        <article
+          class="bg-white rounded-lg shadow grid hover:scale-105 transition-transform mx-5 z-30"
+        >
+          <a class="p-6" href="acerca-de/nosotros">
+            <h2
+              class="font-native-land text-3xl mb-2 text-secondary-2-0 underline underline-offset-4"
+            >
+              Nosotros
+            </h2>
+            <p class="text-justify">
+              Native Wine es una empresa joven y dinámica que nace de la pasión
+              de siete estudiantes universitarios por el vino y la cultura
+              prehispánica.
+            </p>
+          </a>
+        </article>
+      </div>
+    </section>
+    <Background src="patron-circulo.svg" />
+  </div>
+</Layout>

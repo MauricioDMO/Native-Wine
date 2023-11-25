@@ -1,9 +1,15 @@
 ---
 const { href, class: className } = Astro.props;
-const active = href === Astro.url.pathname;
+
+let active;
+if (Astro.url.pathname === "/" && href === "/") {
+  active = "active";
+} else {
+  active = Astro.url.pathname.includes(href) && href !== "/" ? "active" : "";
+}
 ---
 
-<a href={href} class:list={[className, { active }]} class="text-xl w-auto">
+<a href={href} class={"text-xl w-auto m-1 mx-2" + " " + active}>
   <slot />
   {active && <div />}
 </a>

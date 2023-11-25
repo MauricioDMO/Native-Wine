@@ -1,8 +1,15 @@
 ---
+import Title from "../components/Title.astro";
 import Layout from "../layouts/Layout.astro";
+import Background from "../components/Background.astro";
 ---
 
 <Layout>
-  <h1>404</h1>
-  <p>Page not found</p>
+  <section class="grid place-items-center h-full">
+    <div>
+      <Title>404</Title>
+      <p>Pagina no encontrada</p>
+    </div>
+    <Background src="/patron-circulo.svg" />
+  </section>
 </Layout>
